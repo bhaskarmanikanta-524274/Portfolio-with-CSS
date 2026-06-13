@@ -1,0 +1,237 @@
+/* ==========================
+   CSS VARIABLES
+========================== */
+
+:root {
+    --bg-color: #f4f7fc;
+    --card-color: #ffffff;
+    --text-color: #222;
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dark {
+    --bg-color: #121212;
+    --card-color: #1e1e1e;
+    --text-color: #ffffff;
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
+}
+
+/* ==========================
+   GLOBAL STYLES
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: 0.3s;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header p {
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   NAVBAR (FLEXBOX)
+========================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ==========================
+   MAIN CONTENT
+========================== */
+
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+section,
+article,
+form {
+    background: var(--card-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* ==========================
+   LISTS
+========================== */
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* ==========================
+   PROJECT GRID (CSS GRID)
+========================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: var(--secondary-color);
+}
+
+/* ==========================
+   CONTACT FORM
+========================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    section,
+    article,
+    form {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#themeBtn {
+    margin-top: 15px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.projects-grid article {
+    background: var(--card-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
